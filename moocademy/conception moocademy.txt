@@ -1,0 +1,10 @@
+TABLE cours
+  ID (primary key, integer)
+  Titre (text)
+  Description (text)
+
+TABLE leçons
+  ID (primary key, integer)
+  cours ID (foreign key, integer)
+  Titre (text)
+  Body (text)

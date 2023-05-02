@@ -1,0 +1,14 @@
+CREATE TABLE `lessons` (
+  `ID` INTEGER,
+  `name` TEXT,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `students` (
+  `ID` INTEGER,
+  `lessonID` INTEGER,
+  `name` TEXT,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`lessonID`) REFERENCES `lessons`(`ID`)
+);
+

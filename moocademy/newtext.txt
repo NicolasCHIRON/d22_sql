@@ -1,0 +1,16 @@
+CREATE TABLE `cours` (
+  `ID` INTEGER,
+  `Titre` TEXT,
+  `Description` TEXT,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `leçons` (
+  `ID` INTEGER,
+  `coursID` INTEGER,
+  `Titre` TEXT,
+  `Body` TEXT,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`coursID`) REFERENCES `cours`(`ID`)
+);
+

@@ -1,0 +1,26 @@
+CREATE TABLE `Users` (
+  `ID` INTEGER,
+  `name` TEXT,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `Links` (
+  `ID` INTEGER,
+  `userID` INTEGER,
+  `name` TEXT,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`userID`) REFERENCES `Users`(`ID`)
+);
+
+CREATE TABLE `Comments` (
+  `ID` INTEGER,
+  `linkID` INTEGER,
+  `userID` INTEGER,
+  `parentcommentsID` INTEGER,
+  `text` TEXT,
+  PRIMARY KEY (`ID`),
+  FOREIGN KEY (`userID`) REFERENCES `Users`(`ID`),
+  FOREIGN KEY (`linkID`) REFERENCES `Links`(`userID`),
+  FOREIGN KEY (`parentcommentsID`) REFERENCES `Comments`(`ID`)
+);
+
